@@ -4,6 +4,10 @@ const descClose = document.querySelector('.description-close');
 
 elems.forEach((element) => {
   element.addEventListener('mouseover', () => {
+    elems.forEach((element) => {
+      element.classList.remove('part-disabled');
+      element.classList.remove('part-active');
+    });
     element.classList.add('part-active');
     desc.style.display = 'block';
     elems.forEach((element) => {
@@ -14,12 +18,12 @@ elems.forEach((element) => {
       }
     });
   });
-  element.addEventListener('mouseout', () => {
-    element.classList.remove('part-active');
-    elems.forEach((element) => {
-      element.classList.remove('part-disabled');
-    });
-  });
+  // element.addEventListener('mouseout', () => {
+  //   element.classList.remove('part-active');
+  //   elems.forEach((element) => {
+  //     element.classList.remove('part-disabled');
+  //   });
+  // });
 });
 
 descClose.addEventListener('click', () => {
